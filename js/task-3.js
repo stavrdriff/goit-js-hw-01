@@ -1,8 +1,8 @@
 function getElementWidth(content = '', padding = '', border = '') {
   const separator = 'px'
-  const contentValue = sliceArguments(content);
-  const paddingValue = sliceArguments(padding);
-  const borderValue = sliceArguments(border);
+  const contentValue = sliceArguments(String(content));
+  const paddingValue = sliceArguments(String(padding));
+  const borderValue = sliceArguments(String(border));
 
   function sliceArguments(arg) {
     return Number(arg.split([separator]).slice()[0]);
