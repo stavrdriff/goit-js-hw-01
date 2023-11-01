@@ -1,4 +1,4 @@
-function getElementWidth(content, padding, border) {
+function getElementWidth(content = '', padding = '', border = '') {
   const separator = 'px'
   const contentValue = sliceArguments(content);
   const paddingValue = sliceArguments(padding);
@@ -8,12 +8,7 @@ function getElementWidth(content, padding, border) {
     return Number(arg.split([separator]).slice()[0]);
   }
 
-  if (contentValue >= 0 && paddingValue >= 0 && borderValue >= 0) {
-    return contentValue + paddingValue * 2 + borderValue * 2;
-  } else {
-    return 'incorrect data'
-  }
-
+  return contentValue + paddingValue * 2 + borderValue * 2;
 }
 
 console.log(getElementWidth("50px", "8px", "4px")); // 74
